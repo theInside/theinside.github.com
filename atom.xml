@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title>Inside Hack</title>
-  <link href="http://theInside.github.com/atom.xml" rel="self"/>
-  <link href="http://theInside.github.com/"/>
-  <updated>2011-09-30T11:45:37+08:00</updated>
-  <id>http://theInside.github.com/</id>
+  <link href="http://hack.inside.com.tw/atom.xml" rel="self"/>
+  <link href="http://hack.inside.com.tw/"/>
+  <updated>2011-09-30T11:46:28+08:00</updated>
+  <id>http://hack.inside.com.tw/</id>
   <author>
     <name>Inside Inc.</name>
     
