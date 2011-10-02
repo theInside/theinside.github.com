@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Inside Hack</title>
+  <link href="http://hack.inside.com.tw/atom.xml" rel="self"/>
+  <link href="http://hack.inside.com.tw/"/>
+  <updated>2011-09-30T11:49:59+08:00</updated>
+  <id>http://hack.inside.com.tw/</id>
+  <author>
+    <name>Inside Inc.</name>
+    
+      <email>hello@inside.com.tw</email>
+    
+  </author>
+
+  
+</feed>
