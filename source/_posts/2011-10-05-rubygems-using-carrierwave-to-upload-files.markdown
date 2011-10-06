@@ -14,7 +14,7 @@ categories: [Rails, Rubygems, Upload]
 安裝
 -------
 
-```ruby
+```ruby Gemfile
     gem 'carrierwave'
 ```
 
@@ -40,8 +40,8 @@ categories: [Rails, Rubygems, Upload]
 
 #### 掛在 model 裡使用
 
-在 model 裡 (user.rb)
-```ruby
+在 model 裡
+```ruby app/models/user.rb
     class User
       mount_uploader :picture, UserAvatarUploader
     end
@@ -51,18 +51,15 @@ categories: [Rails, Rubygems, Upload]
 
     rails g migration add_column_picture_to_users
 
-201101011213_add_column_picture_to_users.rb
-```ruby
+```ruby db/migrate/201101011213_add_column_picture_to_users.rb
     add_column :users, :picture, :string
 ```
 
-_form.html.erb
-```html
+```html _form.html.erb
     <input type="file" name="picture" />
 ```
 
-users_controller.rb
-```ruby
+```ruby users_controller.rb
     u = User.new
     u.picture = params[:picture]
     u.save!
@@ -77,49 +74,47 @@ uploader 設定
 #### 儲存
 
 存成檔案, fog  為將檔案上傳至 cdn 用, 稍後會介紹 
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     storage :file
     # storage :fog
 ```
 可覆寫 store_dir, 以指定儲存路徑, 以 public/ 為基礎
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     def store_dir
        "uploader/user_avatar"
     end    
 ``` 
 限定檔案附檔名
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     def extension_white_list
       %w(jpg jpeg gif png)
     end
 ```
 指定檔名, 包含附檔名 (model.id 稍後介紹)
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     def filename
       # @filename
       "#{model.id}.png"
     end
 ```
 指定預設的 url (e.g.沒有圖的時候)
-```ruby
-    class MyUploader < CarrierWave::Uploader::Base
-      def default_url
-        "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-      end
+```ruby app/uploader/user_avatar_uploader.rb
+    def default_url
+      "/images/fallback/" + [version_name, "default.png"].compact.join('_')
     end
 ```
 #### 使用 Imagemagick 壓縮
 
 Gemfile
-```ruby
+```ruby Gemfile
     gem 'rmagick'
 ```
-user_avatar_uploader.rb 加上
-```ruby
+uploader 加上
+```ruby app/uploader/user_avatar_uploader.rb
     include CarrierWave::RMagick
 ```
 在 user_avatar_uploader.rb 中可以自行定義要用哪些 Imagemagick 的 method 處理圖片
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     # 轉換成 png
     process :convert => 'png'
     # 按比例縮成指定大小並且補白
@@ -128,7 +123,7 @@ user_avatar_uploader.rb 加上
 所有可用的 api 見 [https://github.com/jnicklas/carrierwave/blob/master/lib/carrierwave/processing/rmagick.rb](https://github.com/jnicklas/carrierwave/blob/master/lib/carrierwave/processing/rmagick.rb)
 
 若希望可以另做縮圖, 可以透過 version 同時建立與原圖不同的版本
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     # 版本名稱為 thumb
     version :thumb do
        process :resize_and_pad => [100, 100]
@@ -158,16 +153,15 @@ RMagick api 可參考
 
 #### 上傳至 CDN (以 Amazon S3 為例)
 
-Gemfile
-```ruby
+```ruby Gemfile
     gem 'fog'
 ```
 在 storage 改為 fog
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     storage :fog
 ```
 新增 config/initializer/carrierwave.rb, 內容如下
-```ruby
+```ruby config/initializer/carrierwave.rb
     CarrierWave.configure do |config|
       config.fog_credentials = {
         :provider               => 'AWS',       # required
@@ -188,7 +182,7 @@ Gemfile
 access key 可至 [https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key](https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key) 搜尋
 
 bucket 中儲存的路徑可在 user_avatar_uploader.rb 中的 store_dir 定義
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     def store_dir
         "user_avatar/#{model.id}"
     end
@@ -197,11 +191,11 @@ bucket 中儲存的路徑可在 user_avatar_uploader.rb 中的 store_dir 定義
 #### uploader 的 methods
 
 當你將 uploader mount 進 model, 就可以在 uploader 中直接取得該 model 的 instance
-```ruby
+```ruby app/uploader/user_avatar_uploader.rb
     def filename
        "#{model.id}.png"
     end 
-    # 還有 mounted_as
+    # and mounted_as
     def store_dir
        "uploader/user_avatar/#{mounted_as}"
     end
