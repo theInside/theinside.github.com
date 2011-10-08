@@ -106,9 +106,16 @@ Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&#8230;</p>
 <p>於是，我們決定用 Octopress，Octopress 有以下特色：</p>
 
 <ul>
-<li>基於 [Jekyll]，這是一個以 Ruby 語言撰寫的靜態網頁生成器</li>
+<li>基於 <a href="https://github.com/mojombo/jekyll">Jekyll</a>，這是一個以 Ruby 語言撰寫的靜態網頁生成器，可以讓你輕易的利用 Markdown 語法來撰寫文章，並協助你產生 HTML 靜態網頁，同時提供了 template 系統讓你可以輕易的構成整個網站的版面與樣式。</li>
+<li>Octopress 則更進一步的善用了 Git（將文章、程式碼區分為不同的 branch）、rake（所有經常進行的動作，像是產生靜態網頁、部署上雲端，都利用 <code>rake tasks</code> 進行）。</li>
+<li>提供許多好用的外掛，我個人特別喜歡的是 <a href="http://octopress.org/docs/plugins/gist-tag/">Gist tag</a>，不僅可以讓你輕鬆的管理、分享程式碼，還可以自動幫你在網頁中 cache 一份，即使是 RSS 訂閱讀者也不用擔心 RSS 軟體無法直接讀取 script 內容。</li>
+<li>非常適合 developer 撰寫文章，除了利用 Markdown、Git 管理、發佈文章之外，要自行 hack 撰寫新的外掛也非常容易，例如我就自己寫了一個 <a href="https://github.com/deduce/octopress-authorbox">octopress-authorbox</a> 來讓 Inside Hack 的每個作者都可以輕易的呈現自己的個人檔案在每一篇文章底下。</li>
 </ul>
 
+
+<p>網路知名部落客 <a href="http://blog.xdite.net/">xdite</a> 也有對 octopress 進行非常詳盡的介紹：<a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a></p>
+
+<p>Inside Hack 歡迎投稿，<a href="http://hack.inside.com.tw/about-us/">投稿方式</a></p>
 <div class='octopress-authorbox'>
 	<div class="author-pic">
 		<img src="http://www.gravatar.com/avatar/e0c2a42f0fa81a1e2593843ebb89ea7d" alt="Lawrence Lin" />

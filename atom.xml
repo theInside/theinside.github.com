@@ -4,7 +4,7 @@
   <title>Inside Hack</title>
   <link href="http://hack.inside.com.tw/atom.xml" rel="self"/>
   <link href="http://hack.inside.com.tw/"/>
-  <updated>2011-10-08T20:54:45+08:00</updated>
+  <updated>2011-10-09T01:38:28+08:00</updated>
   <id>http://hack.inside.com.tw/</id>
   <author>
     <name>Inside Inc.</name>
@@ -490,9 +490,16 @@ Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&amp;#8230;
 &lt;p&gt;於是，我們決定用 Octopress，Octopress 有以下特色：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;基於 [Jekyll]，這是一個以 Ruby 語言撰寫的靜態網頁生成器&lt;/li&gt;
+&lt;li&gt;基於 &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt;，這是一個以 Ruby 語言撰寫的靜態網頁生成器，可以讓你輕易的利用 Markdown 語法來撰寫文章，並協助你產生 HTML 靜態網頁，同時提供了 template 系統讓你可以輕易的構成整個網站的版面與樣式。&lt;/li&gt;
+&lt;li&gt;Octopress 則更進一步的善用了 Git（將文章、程式碼區分為不同的 branch）、rake（所有經常進行的動作，像是產生靜態網頁、部署上雲端，都利用 &lt;code&gt;rake tasks&lt;/code&gt; 進行）。&lt;/li&gt;
+&lt;li&gt;提供許多好用的外掛，我個人特別喜歡的是 &lt;a href=&quot;http://octopress.org/docs/plugins/gist-tag/&quot;&gt;Gist tag&lt;/a&gt;，不僅可以讓你輕鬆的管理、分享程式碼，還可以自動幫你在網頁中 cache 一份，即使是 RSS 訂閱讀者也不用擔心 RSS 軟體無法直接讀取 script 內容。&lt;/li&gt;
+&lt;li&gt;非常適合 developer 撰寫文章，除了利用 Markdown、Git 管理、發佈文章之外，要自行 hack 撰寫新的外掛也非常容易，例如我就自己寫了一個 &lt;a href=&quot;https://github.com/deduce/octopress-authorbox&quot;&gt;octopress-authorbox&lt;/a&gt; 來讓 Inside Hack 的每個作者都可以輕易的呈現自己的個人檔案在每一篇文章底下。&lt;/li&gt;
 &lt;/ul&gt;
 
+
+&lt;p&gt;網路知名部落客 &lt;a href=&quot;http://blog.xdite.net/&quot;&gt;xdite&lt;/a&gt; 也有對 octopress 進行非常詳盡的介紹：&lt;a href=&quot;http://blog.xdite.net/posts/2011/10/07/what-is-octopress/&quot;&gt;Why Octopress?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Inside Hack 歡迎投稿，&lt;a href=&quot;http://hack.inside.com.tw/about-us/&quot;&gt;投稿方式&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#8217;octopress-authorbox&#8217;&gt;
 	&lt;div class=&quot;author-pic&quot;&gt;
 		&lt;img src=&quot;http://www.gravatar.com/avatar/e0c2a42f0fa81a1e2593843ebb89ea7d&quot; alt=&quot;Lawrence Lin&quot; /&gt;
