@@ -3,13 +3,16 @@ layout: post
 title: "Rubygems: 使用 Carrierwave 處理檔案上傳"
 date: 2011-10-05 21:47
 comments: true
-categories: [Rails, Rubygems, Upload] 
+categories: [Rails, Rubygems, Upload]
+author: marsz
 ---
 
 參考來源
 -------
 
 * Github [https://github.com/jnicklas/carrierwave](https://github.com/jnicklas/carrierwave)
+
+<!-- more -->
 
 安裝
 -------
