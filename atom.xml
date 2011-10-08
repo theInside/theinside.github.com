@@ -4,14 +4,518 @@
   <title>Inside Hack</title>
   <link href="http://hack.inside.com.tw/atom.xml" rel="self"/>
   <link href="http://hack.inside.com.tw/"/>
-  <updated>2011-09-30T11:49:59+08:00</updated>
+  <updated>2011-10-08T20:25:33+08:00</updated>
   <id>http://hack.inside.com.tw/</id>
   <author>
     <name>Inside Inc.</name>
     
-      <email>hello@inside.com.tw</email>
+      <email>hack@inside.com.tw</email>
     
   </author>
 
+  
+  <entry>
+    <title>你下一個 iOS 專案可以參考的開放原始碼專案</title>
+    <link href="http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project/"/>
+    <updated>2011-10-08T15:48:00+08:00</updated>
+    <id>http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project</id>
+    <content type="html">&lt;p&gt;雖然相對 Android 的開放原始碼策略 iOS 系統似乎沒有這麼的「自由開放」，但是在 App 的開發上， iOS 就如同其他許多熱門平台一樣，有很多優質的開放原始碼專案值得參考、投入。&lt;/p&gt;
+
+&lt;p&gt;本篇文章便是要介紹一些 iOS 開放原始碼專案，方便開發者快速的打造 iOS apps ，或許下次你要開發 iOS apps 也可以參考。&lt;/p&gt;
+
+&lt;!&#8211; more &#8211;&gt;
+
+
+&lt;h3&gt;Three20&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://three20.info/&quot;&gt;Three20&lt;/a&gt; 的熱門程度連許多非 iOS 開發者都有耳聞，這一個由 Facebook 所公開的開放原始碼專案，目前排名在 GitHub 熱門關注（Popular Wathced）排行的第八名，而前十名則主要包含了像是 jQuery 、 Rails 、 Node.js 等其他重量級的 Web 解決方案。&lt;/p&gt;
+
+&lt;p&gt;Three20 主要包含了以下的功能：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;豐富的 UI 元件，包含模仿原生的 iOS 相簿頁面以及訊息發送介面等&lt;/li&gt;
+&lt;li&gt;App 中共用的 Stylesheet ，讓我們可以快速的打造客製化介面&lt;/li&gt;
+&lt;li&gt;進階的 HTTP Request ，支援上傳進度顯示以及資料驗證等&lt;/li&gt;
+&lt;li&gt;方便的 URL-Based Navigation ，讓開發者可以透過定義 URL 來切換介面，像是撰寫網頁程式一般&lt;/li&gt;
+&lt;li&gt;加強許多 UIKit / Foundation 的基本功能（例如 NSString 等）&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Nibmus&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jverkoey.github.com/nimbus/&quot;&gt;Nimbus&lt;/a&gt; 是 Three20 的主要開發者 Jeff Verkoey 所主導開發的新專案，目標是為了解決 Three20 日益肥大的程式庫所造成的種種問題。&lt;/p&gt;
+
+&lt;p&gt;相對於完整的 Three20 而言， Nimbus 的輕量化設計以及徹底的模組化很適合有一定經驗的開發者，只要將自己所需要的模組加入即可，不需要加入整個函式庫。&lt;/p&gt;
+
+&lt;p&gt;截至目前為止， Nimbus 已經實作了包含：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;進階的 HTTP Request ，基於 ASIHTTPRequest&lt;/li&gt;
+&lt;li&gt;類似 iOS 內建的相簿瀏覽介面&lt;/li&gt;
+&lt;li&gt;容易使用的 UITableViewDataSource&lt;/li&gt;
+&lt;li&gt;許多的 UIKit / Foundation 基本功能加強&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;iOS Boilerplate&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://iosboilerplate.com/&quot;&gt;iOS Boilerplate&lt;/a&gt; 是模仿熱門的 HTML5 Boilerplate 專案，替 Cocoa Touch Developer 打造一個方便使用的專案模版，在數個月前推出後也獲得很多開發者的矚目。&lt;/p&gt;
+
+&lt;p&gt;iOS Boilerplate 相對於 Nimbus 和 Three20 ，提供了更多更基本的函式庫讓開發者可以方便使用，也和 Nimbus 一般加入了 Cocoa 平台上最熱門的 HTTP 函式庫 ASIHTTPRequest 。&lt;/p&gt;
+
+&lt;p&gt;iOS Boilerplate 目前提供了像是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;結合 ASIHTTPRequest 的遠端圖片下載以及管理介面&lt;/li&gt;
+&lt;li&gt;下拉更新的 UITableView header 以及許多 UITableViewCells&lt;/li&gt;
+&lt;li&gt;第三方的專案，包含 JSONKit 、 SVProgressHUD&lt;/li&gt;
+&lt;li&gt;以及其他 NSData 、 NSString 和 NSDictionary 的一些 helpers&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;我的個人偏好&lt;/h3&gt;
+
+&lt;p&gt;因為先前曾經參與 Three20 的專案開發，我和我的工作伙伴在 &lt;a href=&quot;http://thepolydice.com&quot;&gt;Polydice&lt;/a&gt; 的工作主要都使用 Three20 為主，且基於 Three20 也開發了許多介面元件，方便我們快速的能夠完成各種專案。&lt;/p&gt;
+
+&lt;p&gt;然而在最近的專案當中，我也開始嘗試使用 Nimbus 來進行開發，主要原因在於 Nimbus 提供了更好的客製化空間，讓我們在效能以及介面上有更多著墨。&lt;/p&gt;
+&lt;div class=&#8217;octopress-authorbox&#8217;&gt;
+	&lt;div class=&quot;author-pic&quot;&gt;
+		&lt;img src=&quot;http://www.gravatar.com/avatar/aa0358f6740f1bf02911e5300e08e800&quot; alt=&quot;Richard Lee&quot; /&gt;
+	&lt;/div&gt;
+	
+	&lt;div class=&quot;author-about&quot;&gt;
+		&lt;h3&gt;Richard Lee&lt;/h3&gt;
+		&lt;p&gt;Founder of Inside.com.tw and Co-founder of Polydice, Inc.&lt;/p&gt;
+		&lt;ul class=&quot;author-links&quot;&gt;
+			
+			&lt;li&gt;
+			&lt;a href=&quot;http://twitter.com/dlackty&quot;&gt;@dlackty&lt;/a&gt;
+			&lt;/li&gt;
+			
+			
+			&lt;li&gt;
+			&lt;a href=&quot;http://www.inside.com.tw/&quot;&gt;個人網站&lt;/a&gt;
+			&lt;/li&gt;
+			
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Rubygems: 使用 Carrierwave 處理檔案上傳</title>
+    <link href="http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/"/>
+    <updated>2011-10-05T21:47:00+08:00</updated>
+    <id>http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files</id>
+    <content type="html">&lt;h2&gt;參考來源&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Github &lt;a href=&quot;https://github.com/jnicklas/carrierwave&quot;&gt;https://github.com/jnicklas/carrierwave&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;!&#8211; more &#8211;&gt;
+
+
+&lt;h2&gt;安裝&lt;/h2&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;Gemfile&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;carrierwave&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;h2&gt;建立 uploader&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;rails generate uploader user_avatar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;檔案產生於&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;app/uploader/user_avatar_uploader.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;簡易範例&lt;/h2&gt;
+
+&lt;h4&gt;直接使用&lt;/h4&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;uploader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;UserAvatarUploader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;uploader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;store!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;h4&gt;掛在 model 裡使用&lt;/h4&gt;
+
+&lt;p&gt;在 model 裡&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/models/user.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;n&quot;&gt;mount_uploader&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:picture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;UserAvatarUploader&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;新增 migration, 因欄位名稱是 picture, 所以新增一個 picture 的 string 欄位在 users table 裡&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rails g migration add_column_picture_to_users
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;db/migrate/201101011213_add_column_picture_to_users.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;add_column&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:picture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;_form.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;html&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;file&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;picture&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;users_controller.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;picture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:picture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save!&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;picture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; /url/to/file.png&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;在 _form.html.erb 送出 post 後, 便會按照在 user_avatar_uploader.rb 中的設定進行儲存並且回傳檔案網址&lt;/p&gt;
+
+&lt;h2&gt;uploader 設定&lt;/h2&gt;
+
+&lt;h4&gt;儲存&lt;/h4&gt;
+
+&lt;p&gt;存成檔案, fog  為將檔案上傳至 cdn 用, 稍後會介紹&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;storage&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:file&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;c1&quot;&gt;# storage :fog&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;可覆寫 store_dir, 以指定儲存路徑, 以 public/ 為基礎&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;store_dir&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;s2&quot;&gt;&amp;quot;uploader/user_avatar&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;
+限定檔案附檔名&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;extension_white_list&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;sx&quot;&gt;%w(jpg jpeg gif png)&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;指定檔名, 包含附檔名 (model.id 稍後介紹)&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;filename&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;c1&quot;&gt;# @filename&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.png&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;指定預設的 url (e.g.沒有圖的時候)&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;default_url&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;/images/fallback/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;default.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;h4&gt;使用 Imagemagick 壓縮&lt;/h4&gt;
+
+&lt;p&gt;Gemfile&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;Gemfile&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rmagick&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;uploader 加上&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CarrierWave&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RMagick&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;在 user_avatar_uploader.rb 中可以自行定義要用哪些 Imagemagick 的 method 處理圖片&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;c1&quot;&gt;# 轉換成 png&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:convert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;png&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;c1&quot;&gt;# 按比例縮成指定大小並且補白&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:resize_and_pad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;所有可用的 api 見 &lt;a href=&quot;https://github.com/jnicklas/carrierwave/blob/master/lib/carrierwave/processing/rmagick.rb&quot;&gt;https://github.com/jnicklas/carrierwave/blob/master/lib/carrierwave/processing/rmagick.rb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;若希望可以另做縮圖, 可以透過 version 同時建立與原圖不同的版本&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;8&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;9&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;10&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;c1&quot;&gt;# 版本名稱為 thumb&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:thumb&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:resize_and_pad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:convert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;png&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;c1&quot;&gt;# 版本名稱為 small&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:small&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:resize_and_pad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:convert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;png&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;mixin 類似 CarrierWave::RMagick 的 module 可以將更多 RMagick 的 api 應用在 process 中&lt;/p&gt;
+
+&lt;p&gt;RMagick api 可參考&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;doc: &lt;a href=&quot;http://studio.imagemagick.org/RMagick/doc/&quot;&gt;http://studio.imagemagick.org/RMagick/doc/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;source: &lt;a href=&quot;https://github.com/rmagick/rmagick/blob/master/lib/RMagick.rb&quot;&gt;https://github.com/rmagick/rmagick/blob/master/lib/RMagick.rb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;取得 version :&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;picture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 原圖 url &lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;picture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thumb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# thumb 版本的 url&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;picture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# small 版本的 url&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;h4&gt;上傳至 CDN (以 Amazon S3 為例)&lt;/h4&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;Gemfile&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;fog&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;在 storage 改為 fog&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;storage&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:fog&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;新增 config/initializer/carrierwave.rb, 內容如下&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;config/initializer/carrierwave.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;8&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;9&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;10&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;11&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;12&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;13&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;14&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;no&quot;&gt;CarrierWave&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configure&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fog_credentials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;    &lt;span class=&quot;ss&quot;&gt;:provider&lt;/span&gt;               &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;AWS&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# required&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;    &lt;span class=&quot;ss&quot;&gt;:aws_access_key_id&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;XXXXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# your aws access key id&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;    &lt;span class=&quot;ss&quot;&gt;:aws_secret_access_key&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xxxxxxxxxx&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# your aws secret access key&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;    &lt;span class=&quot;ss&quot;&gt;:region&lt;/span&gt;                 &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ap-southeast-1&amp;#39;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# your bucket&amp;#39;s region in S3, defaults to &amp;#39;us-east-1&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;c1&quot;&gt;# your S3 bucket name&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fog_directory&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;my_bucket&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;c1&quot;&gt;# custome your domain on aws S3, defaults to nil&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fog_host&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://myapp.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fog_public&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;                                   &lt;span class=&quot;c1&quot;&gt;# optional, defaults to true&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;  &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fog_attributes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Cache-Control&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;max-age=315576000&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# optional, defaults to {}&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;依上述範例, 要在 S3 開一個 public bucket 名為 &amp;#8220;my_bucket&amp;#8221;, 地區為新加坡&lt;/p&gt;
+
+&lt;p&gt;access key 可至 &lt;a href=&quot;https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key&quot;&gt;https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key&lt;/a&gt; 搜尋&lt;/p&gt;
+
+&lt;p&gt;bucket 中儲存的路徑可在 user_avatar_uploader.rb 中的 store_dir 定義&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;store_dir&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;    &lt;span class=&quot;s2&quot;&gt;&amp;quot;user_avatar/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;h4&gt;uploader 的 methods&lt;/h4&gt;
+
+&lt;p&gt;當你將 uploader mount 進 model, 就可以在 uploader 中直接取得該 model 的 instance&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploader/user_avatar_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;5&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;6&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;7&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;filename&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.png&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;c1&quot;&gt;# and mounted_as&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;store_dir&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;   &lt;span class=&quot;s2&quot;&gt;&amp;quot;uploader/user_avatar/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mounted_as&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;uploader 有哪些 medthods 可參考 &lt;a href=&quot;https://github.com/jnicklas/carrierwave/tree/master/lib/carrierwave/uploader&quot;&gt;https://github.com/jnicklas/carrierwave/tree/master/lib/carrierwave/uploader&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;處理 local file 或 remote file&lt;/h4&gt;
+
+&lt;p&gt;remote file, 參考 &lt;a href=&quot;http://stackoverflow.com/questions/5007575/how-to-assign-a-remote-file-to-carrierwave&quot;&gt;http://stackoverflow.com/questions/5007575/how-to-assign-a-remote-file-to-carrierwave&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.google.com/logo.png&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remote_picture_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;local file&lt;/p&gt;
+
+&lt;figure class=&#8217;code&#8217;&gt;&lt;figcaption&gt;&lt;span&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&#8217;line-number&#8217;&gt;1&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;2&lt;/span&gt;
+&lt;span class=&#8217;line-number&#8217;&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;&lt;code class=&#8217;ruby&#8217;&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;no&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/public/images/exmaples/foo.png&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#8217;line&#8217;&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;picture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+
+
+&lt;div class=&#8217;octopress-authorbox&#8217;&gt;
+	&lt;div class=&quot;author-pic&quot;&gt;
+		&lt;img src=&quot;http://www.gravatar.com/avatar/0b2f434918eb4a08439d180a13829631&quot; alt=&quot;Mars Chen&quot; /&gt;
+	&lt;/div&gt;
+	
+	&lt;div class=&quot;author-about&quot;&gt;
+		&lt;h3&gt;Mars Chen&lt;/h3&gt;
+		&lt;p&gt;Mars&lt;/p&gt;
+		&lt;ul class=&quot;author-links&quot;&gt;
+			
+			&lt;li&gt;
+			&lt;a href=&quot;http://twitter.com/marsz330&quot;&gt;@marsz330&lt;/a&gt;
+			&lt;/li&gt;
+			
+			
+			&lt;li&gt;
+			&lt;a href=&quot;http://hack.inside.com.tw/&quot;&gt;個人網站&lt;/a&gt;
+			&lt;/li&gt;
+			
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>使用 Octopress 作為開發者專屬部落格</title>
+    <link href="http://hack.inside.com.tw/blog/2011/09/30/use-octopress-as-a-developer-blog-platform/"/>
+    <updated>2011-09-30T13:48:00+08:00</updated>
+    <id>http://hack.inside.com.tw/blog/2011/09/30/use-octopress-as-a-developer-blog-platform</id>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://hack.inside.com.tw/&quot;&gt;Inside Hack&lt;/a&gt; 部落格開張的第一篇文章就來談談本部落格所使用的開放原始碼專案：&lt;strong&gt;&lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt;&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;身為一個軟體工程師，如果想要寫部落格分享自己的技術研究心得、程式碼，通常都滿麻煩的，目前比較常見的作法是利用 Github 所提供的 &lt;a href=&quot;https://gist.github.com/&quot;&gt;Gist&lt;/a&gt; 來進行程式碼片段的分享與管理，Gist 的好處是它同時幫我們處理了 Syntax highlight 以及版本的控管（每次更新其實都會被儲存成不同的版本）。使用 Gist 搭配主流的部落格平台，像是 Wordpress 或是 Blogger 其實就非常好用了。
+Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&amp;#8230;&lt;/p&gt;
+
+&lt;!&#8211;more&#8211;&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;用 Gist 貼程式碼的話，程式碼是另外建立、另外存放，跟文章本身是分開的，這點除了造成文章不易流傳之外，使用 RSS 訂閱的讀者也就沒辦法順利看到所有的程式碼。寫作過程也變得比較麻煩，還要特地跑上 Gist 貼程式碼，沒網路的時候就不能寫文章了。&lt;/li&gt;
+&lt;li&gt;用 Wordpress 或 Blogger 比較不適合寫技術文章，如果我們不用 Gist，貼程式碼也會造成額外的麻煩，雖然說並非無法解決，但這類部落格平台生來就不是給 developer 用的，與其花時間去讓這些平台可以幫我們做程式碼上色、讓我們可以用 Markdown 寫文章，不如換一個開箱就有這些功能的平台。&lt;/li&gt;
+&lt;li&gt;我們想要用 geek 的方式寫文章，最好是程式設計師看了會笑的方式，最好文章可以跟程式碼一樣用 Git 控管，最好多人一起寫作的時候可以善用 Github 這種號稱 social coding 的平台。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;於是，我們決定用 Octopress，Octopress 有以下特色：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基於 [Jekyll]，這是一個以 Ruby 語言撰寫的靜態網頁生成器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#8217;octopress-authorbox&#8217;&gt;
+	&lt;div class=&quot;author-pic&quot;&gt;
+		&lt;img src=&quot;http://www.gravatar.com/avatar/e0c2a42f0fa81a1e2593843ebb89ea7d&quot; alt=&quot;Lawrence Lin&quot; /&gt;
+	&lt;/div&gt;
+	
+	&lt;div class=&quot;author-about&quot;&gt;
+		&lt;h3&gt;Lawrence Lin&lt;/h3&gt;
+		&lt;p&gt;Founder of Inside.com.tw&lt;/p&gt;
+		&lt;ul class=&quot;author-links&quot;&gt;
+			
+			&lt;li&gt;
+			&lt;a href=&quot;http://twitter.com/deduce&quot;&gt;@deduce&lt;/a&gt;
+			&lt;/li&gt;
+			
+			
+			&lt;li&gt;
+			&lt;a href=&quot;http://www.inside.com.tw/&quot;&gt;個人網站&lt;/a&gt;
+			&lt;/li&gt;
+			
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   
 </feed>

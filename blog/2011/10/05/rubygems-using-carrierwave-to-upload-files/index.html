@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Rubygems: 使用 Carrierwave 處理檔案上傳 - Inside Hack</title>
+  <meta name="author" content="Inside Inc.">
+
+  
+  <meta name="description" content="參考來源Github https://github.com/jnicklas/carrierwave安裝Gemfile1gem &#39;carrierwave&#39;建立 uploaderrails generate uploader user_avatar檔案產生於app/uploade...">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Inside Hack" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Inside Hack</a></h1>
+  
+    <h2>網頁程式技術與行動應用程式開發</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:hack.inside.com.tw" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-us">關於我們</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Rubygems: 使用 Carrierwave 處理檔案上傳</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-10-05T21:47:00+08:00" pubdate  data-updated="true" >Oct 5<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>參考來源</h2>
+
+<ul>
+<li>Github <a href="https://github.com/jnicklas/carrierwave">https://github.com/jnicklas/carrierwave</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>安裝</h2>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;carrierwave&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>建立 uploader</h2>
+
+<pre><code>rails generate uploader user_avatar
+</code></pre>
+
+<p>檔案產生於</p>
+
+<pre><code>app/uploader/user_avatar_uploader.rb
+</code></pre>
+
+<h2>簡易範例</h2>
+
+<h4>直接使用</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">uploader</span> <span class="o">=</span> <span class="no">UserAvatarUploader</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">uploader</span><span class="o">.</span><span class="n">store!</span><span class="p">(</span><span class="n">my_file</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>掛在 model 裡使用</h4>
+
+<p>在 model 裡</p>
+
+<figure class='code'><figcaption><span>app/models/user.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">User</span>
+</span><span class='line'>  <span class="n">mount_uploader</span> <span class="ss">:picture</span><span class="p">,</span> <span class="no">UserAvatarUploader</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>新增 migration, 因欄位名稱是 picture, 所以新增一個 picture 的 string 欄位在 users table 裡</p>
+
+<pre><code>rails g migration add_column_picture_to_users
+</code></pre>
+
+<figure class='code'><figcaption><span>db/migrate/201101011213_add_column_picture_to_users.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:picture</span><span class="p">,</span> <span class="ss">:string</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>_form.html.erb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;picture&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>users_controller.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">picture</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:picture</span><span class="o">]</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">save!</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">picture</span><span class="o">.</span><span class="n">url</span> <span class="c1"># =&gt; /url/to/file.png</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 _form.html.erb 送出 post 後, 便會按照在 user_avatar_uploader.rb 中的設定進行儲存並且回傳檔案網址</p>
+
+<h2>uploader 設定</h2>
+
+<h4>儲存</h4>
+
+<p>存成檔案, fog  為將檔案上傳至 cdn 用, 稍後會介紹</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">storage</span> <span class="ss">:file</span>
+</span><span class='line'><span class="c1"># storage :fog</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可覆寫 store_dir, 以指定儲存路徑, 以 public/ 為基礎</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">store_dir</span>
+</span><span class='line'>   <span class="s2">&quot;uploader/user_avatar&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+限定檔案附檔名</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">extension_white_list</span>
+</span><span class='line'>  <span class="sx">%w(jpg jpeg gif png)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>指定檔名, 包含附檔名 (model.id 稍後介紹)</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">filename</span>
+</span><span class='line'>  <span class="c1"># @filename</span>
+</span><span class='line'>  <span class="s2">&quot;</span><span class="si">#{</span><span class="n">model</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.png&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>指定預設的 url (e.g.沒有圖的時候)</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">default_url</span>
+</span><span class='line'>  <span class="s2">&quot;/images/fallback/&quot;</span> <span class="o">+</span> <span class="o">[</span><span class="n">version_name</span><span class="p">,</span> <span class="s2">&quot;default.png&quot;</span><span class="o">].</span><span class="n">compact</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>使用 Imagemagick 壓縮</h4>
+
+<p>Gemfile</p>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;rmagick&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>uploader 加上</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">include</span> <span class="no">CarrierWave</span><span class="o">::</span><span class="no">RMagick</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 user_avatar_uploader.rb 中可以自行定義要用哪些 Imagemagick 的 method 處理圖片</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># 轉換成 png</span>
+</span><span class='line'><span class="n">process</span> <span class="ss">:convert</span> <span class="o">=&gt;</span> <span class="s1">&#39;png&#39;</span>
+</span><span class='line'><span class="c1"># 按比例縮成指定大小並且補白</span>
+</span><span class='line'><span class="n">process</span> <span class="ss">:resize_and_pad</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">160</span><span class="p">,</span> <span class="mi">160</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>所有可用的 api 見 <a href="https://github.com/jnicklas/carrierwave/blob/master/lib/carrierwave/processing/rmagick.rb">https://github.com/jnicklas/carrierwave/blob/master/lib/carrierwave/processing/rmagick.rb</a></p>
+
+<p>若希望可以另做縮圖, 可以透過 version 同時建立與原圖不同的版本</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># 版本名稱為 thumb</span>
+</span><span class='line'><span class="n">version</span> <span class="ss">:thumb</span> <span class="k">do</span>
+</span><span class='line'>   <span class="n">process</span> <span class="ss">:resize_and_pad</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="o">]</span>
+</span><span class='line'>   <span class="n">process</span> <span class="ss">:convert</span> <span class="o">=&gt;</span> <span class="s1">&#39;png&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="c1"># 版本名稱為 small</span>
+</span><span class='line'><span class="n">version</span> <span class="ss">:small</span> <span class="k">do</span>
+</span><span class='line'>   <span class="n">process</span> <span class="ss">:resize_and_pad</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">160</span><span class="p">,</span> <span class="mi">160</span><span class="o">]</span>
+</span><span class='line'>   <span class="n">process</span> <span class="ss">:convert</span> <span class="o">=&gt;</span> <span class="s1">&#39;png&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>mixin 類似 CarrierWave::RMagick 的 module 可以將更多 RMagick 的 api 應用在 process 中</p>
+
+<p>RMagick api 可參考</p>
+
+<blockquote><ul>
+<li>doc: <a href="http://studio.imagemagick.org/RMagick/doc/">http://studio.imagemagick.org/RMagick/doc/</a></li>
+<li>source: <a href="https://github.com/rmagick/rmagick/blob/master/lib/RMagick.rb">https://github.com/rmagick/rmagick/blob/master/lib/RMagick.rb</a></li>
+</ul>
+</blockquote>
+
+<p>取得 version :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">picture</span><span class="o">.</span><span class="n">url</span> <span class="c1"># 原圖 url </span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">picture</span><span class="o">.</span><span class="n">thumb</span><span class="o">.</span><span class="n">url</span> <span class="c1"># thumb 版本的 url</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">picture</span><span class="o">.</span><span class="n">small</span><span class="o">.</span><span class="n">url</span> <span class="c1"># small 版本的 url</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>上傳至 CDN (以 Amazon S3 為例)</h4>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;fog&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 storage 改為 fog</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">storage</span> <span class="ss">:fog</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>新增 config/initializer/carrierwave.rb, 內容如下</p>
+
+<figure class='code'><figcaption><span>config/initializer/carrierwave.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">CarrierWave</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">fog_credentials</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="ss">:provider</span>               <span class="o">=&gt;</span> <span class="s1">&#39;AWS&#39;</span><span class="p">,</span>       <span class="c1"># required</span>
+</span><span class='line'>    <span class="ss">:aws_access_key_id</span>      <span class="o">=&gt;</span> <span class="s1">&#39;XXXXX&#39;</span><span class="p">,</span>       <span class="c1"># your aws access key id</span>
+</span><span class='line'>    <span class="ss">:aws_secret_access_key</span>  <span class="o">=&gt;</span> <span class="s1">&#39;xxxxxxxxxx&#39;</span><span class="p">,</span>       <span class="c1"># your aws secret access key</span>
+</span><span class='line'>    <span class="ss">:region</span>                 <span class="o">=&gt;</span> <span class="s1">&#39;ap-southeast-1&#39;</span>  <span class="c1"># your bucket&#39;s region in S3, defaults to &#39;us-east-1&#39;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="c1"># your S3 bucket name</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">fog_directory</span>  <span class="o">=</span> <span class="s1">&#39;my_bucket&#39;</span>
+</span><span class='line'>  <span class="c1"># custome your domain on aws S3, defaults to nil</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">fog_host</span>       <span class="o">=</span> <span class="s1">&#39;http://myapp.com&#39;</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">fog_public</span>     <span class="o">=</span> <span class="kp">true</span>                                   <span class="c1"># optional, defaults to true</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">fog_attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cache-Control&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;max-age=315576000&#39;</span><span class="p">}</span>  <span class="c1"># optional, defaults to {}</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>依上述範例, 要在 S3 開一個 public bucket 名為 &#8220;my_bucket&#8221;, 地區為新加坡</p>
+
+<p>access key 可至 <a href="https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key">https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key</a> 搜尋</p>
+
+<p>bucket 中儲存的路徑可在 user_avatar_uploader.rb 中的 store_dir 定義</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">store_dir</span>
+</span><span class='line'>    <span class="s2">&quot;user_avatar/</span><span class="si">#{</span><span class="n">model</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>uploader 的 methods</h4>
+
+<p>當你將 uploader mount 進 model, 就可以在 uploader 中直接取得該 model 的 instance</p>
+
+<figure class='code'><figcaption><span>app/uploader/user_avatar_uploader.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">filename</span>
+</span><span class='line'>   <span class="s2">&quot;</span><span class="si">#{</span><span class="n">model</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.png&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="c1"># and mounted_as</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">store_dir</span>
+</span><span class='line'>   <span class="s2">&quot;uploader/user_avatar/</span><span class="si">#{</span><span class="n">mounted_as</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>uploader 有哪些 medthods 可參考 <a href="https://github.com/jnicklas/carrierwave/tree/master/lib/carrierwave/uploader">https://github.com/jnicklas/carrierwave/tree/master/lib/carrierwave/uploader</a></p>
+
+<h4>處理 local file 或 remote file</h4>
+
+<p>remote file, 參考 <a href="http://stackoverflow.com/questions/5007575/how-to-assign-a-remote-file-to-carrierwave">http://stackoverflow.com/questions/5007575/how-to-assign-a-remote-file-to-carrierwave</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.google.com/logo.png&quot;</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">remote_picture_url</span> <span class="o">=</span> <span class="n">url</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">save</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>local file</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">u</span> <span class="o">=</span>  <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">/public/images/exmaples/foo.png&quot;</span>
+</span><span class='line'><span class="n">u</span><span class="o">.</span><span class="n">picture</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+<div class='octopress-authorbox'>
+	<div class="author-pic">
+		<img src="http://www.gravatar.com/avatar/0b2f434918eb4a08439d180a13829631" alt="Mars Chen" />
+	</div>
+	
+	<div class="author-about">
+		<h3>Mars Chen</h3>
+		<p>Mars</p>
+		<ul class="author-links">
+			
+			<li>
+			<a href="http://twitter.com/marsz330">@marsz330</a>
+			</li>
+			
+			
+			<li>
+			<a href="http://hack.inside.com.tw/">個人網站</a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">marsz</span></span>
+
+      
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-10-05T21:47:00+08:00" pubdate  data-updated="true" >Oct 5<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/rubygems/'>Rubygems</a>, <a class='category' href='/blog/categories/upload/'>Upload</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/" data-via="insideCyberbuzz" data-counturl="http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/10/08/template-for-your-next-ios-project/">你下一個 iOS 專案可以參考的開放原始碼專案</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/">Rubygems: 使用 Carrierwave 處理檔案上傳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/30/use-octopress-as-a-developer-blog-platform/">使用 Octopress 作為開發者專屬部落格</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("insideCyberbuzz", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/insideCyberbuzz" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @insideCyberbuzz</a>
+  
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2011 - Inside Inc. -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+    (function () {
+      var disqus_shortname = 'insidehack';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/';
+        var disqus_url = 'http://hack.inside.com.tw/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/';
+        var disqus_script = 'embed.js'
+      
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-653607-40']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Inside Hack</title>
+  <title>你下一個 iOS 專案可以參考的開放原始碼專案 - Inside Hack</title>
   <meta name="author" content="Inside Inc.">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hack.inside.com.tw/">
+  <link rel="canonical" href="http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -59,15 +59,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/10/08/template-for-your-next-ios-project/">你下一個 iOS 專案可以參考的開放原始碼專案</a></h1>
+      <h1 class="entry-title">你下一個 iOS 專案可以參考的開放原始碼專案</h1>
     
     
       <p class="meta">
@@ -83,84 +80,105 @@
 
 <time datetime="2011-10-08T15:48:00+08:00" pubdate  data-updated="true" >Oct 8<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/10/08/template-for-your-next-ios-project/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>雖然相對 Android 的開放原始碼策略 iOS 系統似乎沒有這麼的「自由開放」，但是在 App 的開發上， iOS 就如同其他許多熱門平台一樣，有很多優質的開放原始碼專案值得參考、投入。</p>
+<div class="entry-content"><p>雖然相對 Android 的開放原始碼策略 iOS 系統似乎沒有這麼的「自由開放」，但是在 App 的開發上， iOS 就如同其他許多熱門平台一樣，有很多優質的開放原始碼專案值得參考、投入。</p>
 
 <p>本篇文章便是要介紹一些 iOS 開放原始碼專案，方便開發者快速的打造 iOS apps ，或許下次你要開發 iOS apps 也可以參考。</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/10/08/template-for-your-next-ios-project/">Read on &rarr;</a>
-    </footer>
-  
+<!-- more -->
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/">Rubygems: 使用 Carrierwave 處理檔案上傳</a></h1>
-    
-    
-      <p class="meta">
-        
+<h3>Three20</h3>
 
+<p><a href="http://three20.info/">Three20</a> 的熱門程度連許多非 iOS 開發者都有耳聞，這一個由 Facebook 所公開的開放原始碼專案，目前排名在 GitHub 熱門關注（Popular Wathced）排行的第八名，而前十名則主要包含了像是 jQuery 、 Rails 、 Node.js 等其他重量級的 Web 解決方案。</p>
 
-
-
-
-  
-
-
-
-<time datetime="2011-10-05T21:47:00+08:00" pubdate  data-updated="true" >Oct 5<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>參考來源</h2>
+<p>Three20 主要包含了以下的功能：</p>
 
 <ul>
-<li>Github <a href="https://github.com/jnicklas/carrierwave">https://github.com/jnicklas/carrierwave</a></li>
+<li>豐富的 UI 元件，包含模仿原生的 iOS 相簿頁面以及訊息發送介面等</li>
+<li>App 中共用的 Stylesheet ，讓我們可以快速的打造客製化介面</li>
+<li>進階的 HTTP Request ，支援上傳進度顯示以及資料驗證等</li>
+<li>方便的 URL-Based Navigation ，讓開發者可以透過定義 URL 來切換介面，像是撰寫網頁程式一般</li>
+<li>加強許多 UIKit / Foundation 的基本功能（例如 NSString 等）</li>
 </ul>
 
 
+<h3>Nibmus</h3>
+
+<p><a href="http://jverkoey.github.com/nimbus/">Nimbus</a> 是 Three20 的主要開發者 Jeff Verkoey 所主導開發的新專案，目標是為了解決 Three20 日益肥大的程式庫所造成的種種問題。</p>
+
+<p>相對於完整的 Three20 而言， Nimbus 的輕量化設計以及徹底的模組化很適合有一定經驗的開發者，只要將自己所需要的模組加入即可，不需要加入整個函式庫。</p>
+
+<p>截至目前為止， Nimbus 已經實作了包含：</p>
+
+<ul>
+<li>進階的 HTTP Request ，基於 ASIHTTPRequest</li>
+<li>類似 iOS 內建的相簿瀏覽介面</li>
+<li>容易使用的 UITableViewDataSource</li>
+<li>許多的 UIKit / Foundation 基本功能加強</li>
+</ul>
+
+
+<h3>iOS Boilerplate</h3>
+
+<p><a href="http://iosboilerplate.com/">iOS Boilerplate</a> 是模仿熱門的 HTML5 Boilerplate 專案，替 Cocoa Touch Developer 打造一個方便使用的專案模版，在數個月前推出後也獲得很多開發者的矚目。</p>
+
+<p>iOS Boilerplate 相對於 Nimbus 和 Three20 ，提供了更多更基本的函式庫讓開發者可以方便使用，也和 Nimbus 一般加入了 Cocoa 平台上最熱門的 HTTP 函式庫 ASIHTTPRequest 。</p>
+
+<p>iOS Boilerplate 目前提供了像是：</p>
+
+<ul>
+<li>結合 ASIHTTPRequest 的遠端圖片下載以及管理介面</li>
+<li>下拉更新的 UITableView header 以及許多 UITableViewCells</li>
+<li>第三方的專案，包含 JSONKit 、 SVProgressHUD</li>
+<li>以及其他 NSData 、 NSString 和 NSDictionary 的一些 helpers</li>
+</ul>
+
+
+<h3>我的個人偏好</h3>
+
+<p>因為先前曾經參與 Three20 的專案開發，我和我的工作伙伴在 <a href="http://thepolydice.com">Polydice</a> 的工作主要都使用 Three20 為主，且基於 Three20 也開發了許多介面元件，方便我們快速的能夠完成各種專案。</p>
+
+<p>然而在最近的專案當中，我也開始嘗試使用 Nimbus 來進行開發，主要原因在於 Nimbus 提供了更好的客製化空間，讓我們在效能以及介面上有更多著墨。</p>
+<div class='octopress-authorbox'>
+	<div class="author-pic">
+		<img src="http://www.gravatar.com/avatar/aa0358f6740f1bf02911e5300e08e800" alt="Richard Lee" />
+	</div>
+	
+	<div class="author-about">
+		<h3>Richard Lee</h3>
+		<p>Founder of Inside.com.tw and Co-founder of Polydice, Inc.</p>
+		<ul class="author-links">
+			
+			<li>
+			<a href="http://twitter.com/dlackty">@dlackty</a>
+			</li>
+			
+			
+			<li>
+			<a href="http://www.inside.com.tw/">個人網站</a>
+			</li>
+			
+		</ul>
+	</div>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/10/05/rubygems-using-carrierwave-to-upload-files/">Read on &rarr;</a>
-    </footer>
-  
+</div>
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/30/use-octopress-as-a-developer-blog-platform/">使用 Octopress 作為開發者專屬部落格</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">dlackty</span></span>
+
+      
 
 
 
@@ -170,39 +188,39 @@
 
 
 
-<time datetime="2011-09-30T13:48:00+08:00" pubdate  data-updated="true" >Sep 30<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/09/30/use-octopress-as-a-developer-blog-platform/#disqus_thread">Comments</a>
-        
-      </p>
+<time datetime="2011-10-08T15:48:00+08:00" pubdate  data-updated="true" >Oct 8<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>ios</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project/" data-via="insideCyberbuzz" data-counturl="http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+</div>
 
+    
+  </footer>
+</article>
 
-  <div class="entry-content"><p><a href="http://hack.inside.com.tw/">Inside Hack</a> 部落格開張的第一篇文章就來談談本部落格所使用的開放原始碼專案：<strong><a href="http://octopress.org/">Octopress</a></strong>。</p>
-
-<p>身為一個軟體工程師，如果想要寫部落格分享自己的技術研究心得、程式碼，通常都滿麻煩的，目前比較常見的作法是利用 Github 所提供的 <a href="https://gist.github.com/">Gist</a> 來進行程式碼片段的分享與管理，Gist 的好處是它同時幫我們處理了 Syntax highlight 以及版本的控管（每次更新其實都會被儲存成不同的版本）。使用 Gist 搭配主流的部落格平台，像是 Wordpress 或是 Blogger 其實就非常好用了。
-Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&#8230;</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/09/30/use-octopress-as-a-developer-blog-platform/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <nav class="pagination">
-    <div>
-      
-      <a href="/blog/archives">Blog Archives</a>
-      
-    </div>
-  </nav>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -228,7 +246,7 @@ Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&#8230;</p>
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -246,6 +264,7 @@ Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&#8230;</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -261,7 +280,10 @@ Inside Hack 本來也打算這麼做，但我們遇到了幾個困擾&#8230;</p>
       var disqus_shortname = 'insidehack';
       
         
-        var disqus_script = 'count.js'
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project/';
+        var disqus_url = 'http://hack.inside.com.tw/blog/2011/10/08/template-for-your-next-ios-project/';
+        var disqus_script = 'embed.js'
       
 
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
