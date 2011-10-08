@@ -1,6 +1,18 @@
 deduce:
-    name: Lawrence Lin
-    twitter: deduce
-    email: deduce@gmail.com
-    blog: http://www.inside.com.tw/
-    description: "Founder of Inside.com.tw"
+  name: Lawrence Lin
+  twitter: deduce
+  email: "deduce@gmail.com"
+  blog: http://www.inside.com.tw/
+  description: "Founder of Inside.com.tw"
+dlackty:
+  name: Richard Lee
+  twitter: dlackty
+  email: "dlackty@gmail.com"
+  blog: http://www.inside.com.tw/
+  description: "Founder of Inside.com.tw and Co-founder of Polydice, Inc."
+marsz:
+  name: Mars Chen
+  twitter: marsz330
+  email: marsz330@gmail.com
+  blog: http://hack.inside.com.tw/
+  description: "Mars"
