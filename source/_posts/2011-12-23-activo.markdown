@@ -1,0 +1,27 @@
+---
+layout: post
+title: customized rails application theme - Activo
+date: 2011-12-23 17:41
+comments: true
+categories:
+author: chiachialee
+---
+
+
+
+當網站需求比較著重在功能面，又不擅長設計介面或專精於CSS時，要自己刻一套不太陽春的樣式和版面，實是一件繁瑣的事情。那麼此時，Actvio會是還不錯的選擇，它提供了許多還不錯的stylesheets、javascripts、icons。而且如果你跟我一樣網站是用rails寫的，那麼你會更喜歡Activo。
+
+Activo在github上[官網]寫得很清楚：
+>_Activo is a theme for Web-app-theme, Formtastic and Attrtastic_
+
+
+[Formtastic]是快速產生HTML form的gem，[Attrtastic]的用法類似formtastic，可以讓你快速顯示ActiveRecord的詳細資料，在index和show這兩個views裡很實用。Activo在後期便加入了專為這兩個gem設計的stylesheets。此外，Activo還提供了一些jQuery plugin的css。如此一來你的介面不會太醜，而且稱得上算是有些質感。
+
+
+心動了嗎？先來看看Activo的[live demo]吧！另外還有[Activo2]，多提供了jQuery UI的樣式。
+
+[官網]:http://dmfrancisco.github.com/activo/
+[Attrtastic]:https://github.com/MBO/attrtastic
+[Formtastic]:https://github.com/justinfrench/formtastic
+[Activo2]:https://github.com/dmfrancisco/activo/tree/activo-2
+[live demo]:http://dmfrancisco.github.com/activo/demo/activo.html
