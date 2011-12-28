@@ -3,25 +3,120 @@ layout: post
 title: customized rails application theme - Activo
 date: 2011-12-23 17:41
 comments: true
-categories:
+categories: [Rails, Activo]
 author: chiachialee
 ---
 
 
+##Activo簡介
 
-當網站需求比較著重在功能面，又不擅長設計介面或專精於CSS時，要自己刻一套不太陽春的樣式和版面，實是一件繁瑣的事情。那麼此時，Actvio會是還不錯的選擇，它提供了許多還不錯的stylesheets、javascripts、icons。而且如果你跟我一樣網站是用rails寫的，那麼你會更喜歡Activo。
+當網站需求比較著重在功能面，又不擅長設計介面或專精於CSS時，要自己刻一套不太陽春的樣式和版面，實是一件繁瑣的事情。那麼此時，Actvio會是還不錯的選擇，它提供了許多還不錯的stylesheets、JavaScripts、icons。
 
-Activo在github上[官網]寫得很清楚：
+Activo在GitHub上[官網]寫得很清楚：
 >_Activo is a theme for Web-app-theme, Formtastic and Attrtastic_
 
 
-[Formtastic]是快速產生HTML form的gem，[Attrtastic]的用法類似formtastic，可以讓你快速顯示ActiveRecord的詳細資料，在index和show這兩個views裡很實用。Activo在後期便加入了專為這兩個gem設計的stylesheets。此外，Activo還提供了一些jQuery plugin的css。如此一來你的介面不會太醜，而且稱得上算是有些質感。
+[Formtastic]和[Attrtastic]是什麼呢？它們是Rails的gems。那這兩個gems主要是在做什麼呢？Formtastic能快速產生HTML form，而Attrtastic則是顯示ActiveRecord的詳細資料，在index和show這兩個views裡很實用。所以如果你跟我一樣網站是用rails寫的，而剛好你又使用了Formtastic或是Attrtastic這兩個gems，那麼你會更喜歡Activo，因為Activo在後期加入了專為這兩個gems設計的stylesheets，你只要把。此外，Activo還提供了一些jQuery plugin的css。如此一來，你的介面不會太醜，而且稱得上算是有些質感。
+
+在決定要不要使用Activo之前，或許可以先來看看[live demo]！另外你也可以參考[Activo2]，多提供了jQuery UI的樣式。除了Activo，當然還有今年twitter推出的[Bootstrap]，也是你可以考慮的web app樣式，不過我們這裡先不談。
 
 
-心動了嗎？先來看看Activo的[live demo]吧！另外還有[Activo2]，多提供了jQuery UI的樣式。
+##simple use case in Rails 3.1 app
+以下範例是一個真實Rails app的管理後台，功能是**漂亮地顯示所有使用者名單**(本範例未使用Formtastic和Attrtastic)。
+
+將Activo套用到你rails app步驟很簡單，只有三大步驟：
+
+Step1：切好後台的layout
+
+``` ruby app/views/layouts/admin.html.erb
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>後台 - 使用者</title>
+  <%= stylesheet_link_tag "activo/admin.css" %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+	  <%= render "layouts/admin_header" %>
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <div id="main">
+		<%= yield %>
+      </div>
+      <div id="sidebar">
+		<%= yield :sidebar %>
+      </div>
+    </div>
+  </div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<%= javascript_include_tag "activo/admin.js" %>
+</body>
+</html>
+```
+activo/admin.css 這支css裡面要include你要用到的stylesheets、activo/admin.js同理。此範例是使用Rails 3.1，如何include可參考[asset pipeline]。
+
+例如：
+
+```
+/* ...
+*= require_self
+*= require ./themes/activo/style.css
+*= require_tree .
+*/
+```
+
+Step2：在controller裡面指定view的layout
+``` ruby app/controllers/admin/users_controller.rb
+class Admin::UsersController
+	layout "admin"
+	...
+end
+```
+
+Step3：搭配Activo的html和css，去修改view
+``` ruby app/views/admin/users/index.html.erb
+<div class="block" id="block-tables">
+<div class="content">
+    <h2 class="title">使用者</h2>
+    <div class="inner">
+	    <h3 class="title">使用者列表</h3>
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>顯示名稱</th>
+            <th class="last">&nbsp;</th>
+          </tr>
+		<% @users.each do |user| %>
+		  <tr class="<%= cycle("odd", "even") -%>">
+            <td><%= user.id %></td>
+			<td><%= user.email %></td>
+			<td><%= user.nickname %></td>
+            <td class='last'>
+			  <%= link_to admin_user_path(user), :method => :delete, :confirm => "確定要刪除這個使用者?" do %>
+				<%= image_tag "activo/icons/24/cross.png", :alt => "Remove", :mouseover => "activo/icons/24/cross-hover.png", :title => "Delete" %>
+			  <% end %>
+            </td>
+          </tr>
+		<% end %>
+        </table>
+      <div class='wat-cf'></div>
+    </div>
+  </div>
+</div>
+```
+
+第三步驟的過程是比較繁瑣的，你得檢視rails view所產生的html code，對應參考Activo的[activo.html]，搭配Activo提供的css修改classname, id等attributes，以達到你想要的介面樣貌。但整體而言，比起自己設計一個乾淨好看的介面，算是方便許多。
+
+
+
 
 [官網]:http://dmfrancisco.github.com/activo/
 [Attrtastic]:https://github.com/MBO/attrtastic
 [Formtastic]:https://github.com/justinfrench/formtastic
 [Activo2]:https://github.com/dmfrancisco/activo/tree/activo-2
 [live demo]:http://dmfrancisco.github.com/activo/demo/activo.html
+[Bootstrap]:http://twitter.github.com/bootstrap/
+[activo.html]:https://github.com/dmfrancisco/activo/blob/master/activo.html
+[asset pipeline]:http://guides.rubyonrails.org/asset_pipeline.html
